@@ -3,6 +3,9 @@
     <style name="Base.Theme.Amplify" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/secondaryLight</item>
+        <item name="background">@color/background</item>
+        <item name="colorSecondary">@color/primaryLight</item>
     </style>
 
     <style name="Theme.Amplify" parent="Base.Theme.Amplify" />

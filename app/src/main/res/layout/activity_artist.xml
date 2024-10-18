@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ArtistActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="462dp"
+        android:layout_height="149dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/header" />
+
+    <ImageView
+        android:id="@+id/artistPhoto"
+        android:layout_width="138dp"
+        android:layout_height="138dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/artist_container"
+        android:clipToOutline="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:srcCompat="@drawable/clairo" />
+
+    <TextView
+        android:id="@+id/artistName"
+        android:layout_width="111dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Clairo"
+        android:textSize="22sp"
+        android:fontFamily="@font/work_sans_extrabold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/artistPhoto" />
+
+    <TextView
+        android:id="@+id/artistTag"
+        android:layout_width="135dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/work_sans"
+        android:gravity="center"
+        android:text="\@clairerthanever"
+        android:textColor="#7B7B7B"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/artistName" />
+
+    <TextView
+        android:id="@+id/followers"
+        android:layout_width="63dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/work_sans_extrabold"
+        android:gravity="center"
+        android:text="100k"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/artistPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="80dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="52dp"
+        android:fontFamily="@font/work_sans"
+        android:gravity="center"
+        android:text="followers"
+        android:textColor="#7B7B7B"
+        app:layout_constraintStart_toEndOf="@+id/artistPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/followers" />
+
+    <TextView
+        android:id="@+id/following"
+        android:layout_width="63dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/work_sans_extrabold"
+        android:gravity="center"
+        android:text="10"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/followers"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="80dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="20dp"
+        android:gravity="center"
+        android:text="following"
+        android:textColor="#7B7B7B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/following" />
+
+    <Button
+        android:id="@+id/followButton"
+        android:layout_width="182dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="follow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="159dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="20dp"
+        android:text="Artist's Tracks"
+        android:gravity="start|center"
+        android:fontFamily="@font/work_sans_bold"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/artistTag" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/songsRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
