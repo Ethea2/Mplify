@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.w3c.dom.Text
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity() {
     private var data = Generator.loadData()
     private lateinit var popularSongs: RecyclerView
     private lateinit var recentReleases: RecyclerView
@@ -28,6 +28,7 @@ class HomeActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        setupBottomNav()
 
         mplifyTitle = findViewById(R.id.mplifyTitle)
         popularSongs = findViewById(R.id.popularRecycler)

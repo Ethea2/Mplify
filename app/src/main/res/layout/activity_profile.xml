@@ -5,10 +5,21 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ArtistActivity">
+    tools:context=".ProfileActivity">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:itemBackground="@drawable/clear_selector"
+        app:menu="@menu/bottom_navigation_bar" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView2"
         android:layout_width="462dp"
         android:layout_height="149dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -16,8 +27,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/header" />
 
+
     <ImageView
-        android:id="@+id/artistPhoto"
+        android:id="@+id/imageView3"
         android:layout_width="138dp"
         android:layout_height="138dp"
         android:layout_marginTop="64dp"
@@ -27,8 +39,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:srcCompat="@drawable/clairo" />
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:srcCompat="@drawable/profile_picture" />
 
     <TextView
         android:id="@+id/artistTitle"
@@ -37,11 +49,11 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:text="Clairo"
+        android:text="Pathan"
         android:textSize="22sp"
         android:fontFamily="@font/work_sans_extrabold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/artistPhoto" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <TextView
         android:id="@+id/artistTag"
@@ -51,7 +63,7 @@
         android:layout_marginTop="4dp"
         android:fontFamily="@font/work_sans"
         android:gravity="center"
-        android:text="\@clairerthanever"
+        android:text="\@PatHan"
         android:textColor="#7B7B7B"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/artistTitle" />
@@ -66,8 +78,8 @@
         android:gravity="center"
         android:text="100k"
         android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@+id/artistPhoto"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <TextView
         android:id="@+id/textView13"
@@ -78,7 +90,7 @@
         android:gravity="center"
         android:text="followers"
         android:textColor="#7B7B7B"
-        app:layout_constraintStart_toEndOf="@+id/artistPhoto"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/followers" />
 
     <TextView
@@ -94,7 +106,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/followers"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <TextView
         android:id="@+id/textView15"
@@ -115,33 +127,44 @@
         android:layout_height="37dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:text="follow"
+        android:text="Edit Profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="43dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/album"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/artistTag" />
+
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/textView9"
         android:layout_width="159dp"
         android:layout_height="29dp"
-        android:layout_marginTop="20dp"
-        android:text="Artist's Tracks"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/work_sans_extrabold"
         android:gravity="start|center"
-        android:fontFamily="@font/work_sans_bold"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.095"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Your Music"
+        android:textColor="@color/primaryLight"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/artistTag" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/songsRecycler"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        app:layout_constrainedHeight="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="409dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/navbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

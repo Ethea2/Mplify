@@ -1,17 +1,15 @@
 package com.mobdeve.s20.andres.wray.amplify
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class ArtistActivity : AppCompatActivity() {
+class ArtistActivity : BaseActivity() {
     private var data = Generator.loadData()
     private lateinit var artistImage: ImageView
     private lateinit var artistNameText: TextView
@@ -31,7 +29,7 @@ class ArtistActivity : AppCompatActivity() {
         }
 
         artistImage = findViewById(R.id.artistPhoto)
-        artistNameText = findViewById(R.id.artistName)
+        artistNameText = findViewById(R.id.artistTitle)
         artistTagText = findViewById(R.id.artistTag)
         followerText = findViewById(R.id.followers)
         followingText = findViewById(R.id.following)
